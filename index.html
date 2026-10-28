@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organizador de Giu</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Ícones Phosphor Icons para modernizar a interface -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- Elementos 3D e Objetos Voando ao Fundo -->
+  <div class="background-3d">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+  </div>
+
+  <!-- Contêiner Principal da Aplicação -->
+  <div class="app-container">
+    
+    <!-- Cabeçalho e Descrição da Página -->
+    <header class="page-header">
+      <h1 class="gradient-text">Organizador de Giu</h1>
+      <p class="page-description">
+        Bem-vindo ao seu espaço pessoal de produtividade e bem-estar. Gerencie suas rotinas diárias, planeje suas tarefas estratégicas e explore dicas práticas com interações modernas para otimizar o seu tempo e manter a sua mente organizada.
+      </p>
+    </header>
+
+    <!-- Seção Central: Gerenciador de Tarefas e Rotinas -->
+    <main class="dashboard-grid">
+      
+      <!-- Bloco de Rotinas Diárias -->
+      <section class="card routine-card">
+        <div class="card-header">
+          <i class="ph ph-sun-dim icon"></i>
+          <h2>Rotina Diária</h2>
+        </div>
+        <div class="input-group">
+          <input type="text" id="routine-input" placeholder="Adicionar nova rotina...">
+          <button id="add-routine-btn"><i class="ph ph-plus-bold"></i></button>
+        </div>
+        <ul class="task-list" id="routine-list">
+          <li class="task-item">
+            <input type="checkbox" id="r1">
+            <label for="r1">Meditação matinal (10 min)</label>
+          </li>
+          <li class="task-item">
+            <input type="checkbox" id="r2" checked>
+            <label for="r2">Revisar metas do dia</label>
+          </li>
+          <li class="task-item">
+            <input type="checkbox" id="r3">
+            <label for="r3">Beber 2L de água</label>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Bloco de Tarefas Pendentes -->
+      <section class="card task-card">
+        <div class="card-header">
+          <i class="ph ph-check-square-offset icon"></i>
+          <h2>Tarefas Prioritárias</h2>
+        </div>
+        <div class="input-group">
+          <input type="text" id="task-input" placeholder="Adicionar nova tarefa...">
+          <button id="add-task-btn"><i class="ph ph-plus-bold"></i></button>
+        </div>
+        <ul class="task-list" id="task-list">
+          <li class="task-item">
+            <input type="checkbox" id="t1">
+            <label for="t1">Organizar arquivos do projeto</label>
+          </li>
+          <li class="task-item">
+            <input type="checkbox" id="t2">
+            <label for="t2">Estudar CSS 3D e Animações</label>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- Seção de Cards Interativos de Dicas -->
+    <section class="tips-section">
+      <h2 class="section-title">Dicas de Organização & Foco</h2>
+      <div class="tips-grid">
+        
+        <!-- Card Dica 1 -->
+        <div class="tip-card" onclick="openModal('tip-1')">
+          <div class="tip-icon"><i class="ph ph-timer"></i></div>
+          <h3>Técnica Pomodoro</h3>
+          <p>Divida o tempo em blocos de foco total e descansos estratégicos.</p>
+          <span class="read-more">Clique para ver detalhes &rarr;</span>
+        </div>
+
+        <!-- Card Dica 2 -->
+        <div class="tip-card" onclick="openModal('tip-2')">
+          <div class="tip-icon"><i class="ph ph-intersect"></i></div>
+          <h3>Matriz de Eisenhower</h3>
+          <p>Priorize tarefas dividindo-as entre urgentes e importantes.</p>
+          <span class="read-more">Clique para ver detalhes &rarr;</span>
+        </div>
+
+        <!-- Card Dica 3 -->
+        <div class="tip-card" onclick="openModal('tip-3')">
+          <div class="tip-icon"><i class="ph ph-brain"></i></div>
+          <h3>Higiene do Sono</h3>
+          <p>Prepare sua mente à noite para garantir máxima energia durante o dia.</p>
+          <span class="read-more">Clique para ver detalhes &rarr;</span>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- MODAIS INTERATIVOS COM DESTAQUE EM RELAÇÃO À PÁGINA -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    
+    <!-- Conteúdo Modal 1 -->
+    <div class="modal-content" id="tip-1">
+      <button class="close-btn" onclick="closeModalDirect()">&times;</button>
+      <div class="modal-header">
+        <i class="ph ph-timer modal-icon"></i>
+        <h2>Técnica Pomodoro</h2>
+      </div>
+      <div class="modal-body">
+        <p>A Técnica Pomodoro é um método de gerenciamento de tempo que utiliza um cronômetro para dividir o trabalho em intervalos de <strong>25 minutos de foco total</strong>, separados por breves pausas de 5 minutos.</p>
+        <h4>Como aplicar na sua rotina:</h4>
+        <ul>
+          <li>Escolha uma tarefa única no seu Organizador.</li>
+          <li>Ajuste o cronômetro para 25 minutos.</li>
+          <li>Trabalhe sem distrações até o alarme tocar.</li>
+          <li>Faça uma pausa de 5 minutos para esticar as pernas.</li>
+          <li>A cada 4 ciclos, faça uma pausa mais longa (15 a 30 min).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Conteúdo Modal 2 -->
+    <div class="modal-content" id="tip-2">
+      <button class="close-btn" onclick="closeModalDirect()">&times;</button>
+      <div class="modal-header">
+        <i class="ph ph-intersect modal-icon"></i>
+        <h2>Matriz de Eisenhower</h2>
+      </div>
+      <div class="modal-body">
+        <p>Esta estratégia ajuda a priorizar suas tarefas classificando-as com base em sua urgência e importância, evitando o estresse da última hora.</p>
+        <h4>Os 4 Quadrantes da Matriz:</h4>
+        <ul>
+          <li><strong>Urgente e Importante:</strong> Faça imediatamente (prazos, crises).</li>
+          <li><strong>Importante, mas Não Urgente:</strong> Agende no seu planejador (planejamento, estudos).</li>
+          <li><strong>Urgente, mas Não Importante:</strong> Delegue se possível (interrupções).</li>
+          <li><strong>Nem Urgente, nem Importante:</strong> Elimine (distrações cotidianas).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Conteúdo Modal 3 -->
+    <div class="modal-content" id="tip-3">
+      <button class="close-btn" onclick="closeModalDirect()">&times;</button>
+      <div class="modal-header">
+        <i class="ph ph-brain modal-icon"></i>
+        <h2>Higiene do Sono</h2>
+      </div>
+      <div class="modal-body">
+        <p>A produtividade do dia seguinte começa na noite anterior. Ter uma rotina consistente para dormir garante clareza mental e melhora a retenção de foco.</p>
+        <h4>Passos para uma boa rotina noturna:</h4>
+        <ul>
+          <li>Desligue telas de luz azul 1 hora antes de dormir.</li>
+          <li>Mantenha o ambiente do quarto escuro e fresco.</li>
+          <li>Evite consumo de cafeína ou refeições pesadas após as 18h.</li>
+          <li>Aproveite para revisar a lista de tarefas do dia seguinte.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts Interativos para Lista e Modais -->
+  <script>
+    // Gerenciamento de Modais
+    function openModal(modalId) {
+      const overlay = document.getElementById('modal-overlay');
+      const modals = document.querySelectorAll('.modal-content');
+      
+      modals.forEach(m => m.classList.remove('active'));
+      
+      document.getElementById(modalId).classList.add('active');
+      overlay.classList.add('active');
+    }
+
+    function closeModal(event) {
+      if (event.target.id === 'modal-overlay') {
+        closeModalDirect();
+      }
+    }
+
+    function closeModalDirect() {
+      const overlay = document.getElementById('modal-overlay');
+      overlay.classList.remove('active');
+    }
+
+    // Funcionalidade básica para adicionar tarefas
+    function setupTaskAdder(inputId, buttonId, listId) {
+      const input = document.getElementById(inputId);
+      const button = document.getElementById(buttonId);
+      const list = document.getElementById(listId);
+
+      function addItem() {
+        if (input.value.trim() !== '') {
+          const id = 'item-' + Date.now();
+          const li = document.createElement('li');
+          li.className = 'task-item';
+          li.innerHTML = `
+            <input type="checkbox" id="${id}">
+            <label for="${id}">${input.value}</label>
+          `;
+          list.appendChild(li);
+          input.value = '';
+        }
+      }
+
+      button.addEventListener('click', addItem);
+      input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') addItem();
+      });
+    }
+
+    setupTaskAdder('routine-input', 'add-routine-btn', 'routine-list');
+    setupTaskAdder('task-input', 'add-task-btn', 'task-list');
+  </script>
+</body>
+</html>
